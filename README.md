@@ -13,12 +13,12 @@ git clone https://github.com/hsiang086/mnist.git
 cd mnist
 pip install -r requirements
 ```
-### Run **paint.py** to draw the number, and press **d** for delete **s** for save. 
+### Run `paint.py` to draw the number, and press `d` for delete `s` for save. 
 ```
 python paint.py
 ```
 ![](github/image.png)
-### Then run **main.py**.
+### Then run `main.py`.
 ```
 python main.py
 ```
