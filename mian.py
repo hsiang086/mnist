@@ -11,8 +11,8 @@ def import_npy():
 import_npy()
 print(np.max(img), img.min())
 
-model = load_model('mnist/mnist/')
-print(model(img[np.newaxis, ..., np.newaxis].astype(np.float32), training=False))
+model = load_model('mnist.h5')
+print(np.argmax(model(img[np.newaxis, ..., np.newaxis].astype(np.float32), training=False)))
 
 fig, ax = plt.subplots(1, 1)
 ax.imshow(img)
