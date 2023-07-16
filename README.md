@@ -18,6 +18,8 @@ pip install -r requirements
 python paint.py
 ```
 ![](github/image.png)
+
+### Add your own model rename it to `mnist`
 ### Then run `main.py`.
 ```
 python main.py

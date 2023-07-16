@@ -11,7 +11,7 @@ def import_npy():
 import_npy()
 print(np.max(img), img.min())
 
-model = keras.models.load_model('mnist_models/mnist.keras')
+model = keras.models.load_model('mnist.keras')
 print(np.argmax(model.predict(np.reshape(img, (1, 28*28)).astype('float32'))[0]))
 
 fig, ax = plt.subplots(1, 1)
