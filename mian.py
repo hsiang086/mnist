@@ -1,4 +1,4 @@
-from tensorflow.keras.models import load_model
+from tensorflow import keras
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -11,8 +11,8 @@ def import_npy():
 import_npy()
 print(np.max(img), img.min())
 
-model = load_model('mnist.h5')
-print(np.argmax(model(img[np.newaxis, ..., np.newaxis].astype(np.float32), training=False)))
+model = keras.models.load_model('mnist_models/mnist.keras')
+print(np.argmax(model.predict(np.reshape(img, (1, 28*28)).astype('float32'))[0]))
 
 fig, ax = plt.subplots(1, 1)
 ax.imshow(img)
