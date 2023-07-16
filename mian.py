@@ -14,6 +14,5 @@ print(np.max(img), img.min())
 model = keras.models.load_model('mnist.keras')
 print(np.argmax(model.predict(np.reshape(img, (1, 28*28)).astype('float32'))[0]))
 
-fig, ax = plt.subplots(1, 1)
-ax.imshow(img)
+plt.imshow(img, cmap = 'gray')
 plt.show()

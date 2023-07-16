@@ -25,7 +25,8 @@ def init():
     img = np.ones((paint_board[0], paint_board[1]))
 
 init()
-while True:
+running = True
+while running:
     clock.tick(FPS)
     pygame.display.set_caption("FPS: {:.2f}".format(clock.get_fps()))
     mouse_pos = pygame.mouse.get_pos()
@@ -40,12 +41,11 @@ while True:
             if event.key == pygame.K_d:
                 screen.fill(WHITE)
                 img = np.ones((paint_board[0], paint_board[1]))
-                print("img cleared")
             if event.key == pygame.K_s:
-                img_saved = cv2.resize(img, (28, 28))
-                img_saved = cv2.GaussianBlur(img_saved, (3, 3), 0)
+                img_saved = cv2.GaussianBlur(img, (3, 3), 0)
                 np.save("img", img_saved)
                 print("img saved")
         if event.type == pygame.QUIT:
-            pygame.quit()
+            running = False
     pygame.display.update()
+pygame.quit()
