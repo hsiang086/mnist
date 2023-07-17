@@ -10,7 +10,6 @@ def init():
     global pixel_w, pixel_h
     global screen
     global clock
-    global r
     global img
     BLACK, WHITE = (0, 0, 0), (255, 255, 255)
     FPS = 240
@@ -21,7 +20,6 @@ def init():
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((RES))
     screen.fill(WHITE)
-    r = 9
     img = np.zeros((paint_board[0], paint_board[1]))
 
 init()
