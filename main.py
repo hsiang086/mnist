@@ -12,7 +12,7 @@ import_npy()
 print(np.max(img), img.min())
 
 model = keras.models.load_model('mnist.keras')
-print(np.argmax(model.predict(np.reshape(img, (1, 28*28)).astype('float32'))[0]))
+print(np.argmax(model.predict(np.reshape(img, (1, 28*28)).astype('float32') / 255)[0]))
 
 plt.imshow(img, cmap = 'gray')
 plt.show()

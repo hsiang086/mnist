@@ -22,7 +22,7 @@ def init():
     screen = pygame.display.set_mode((RES))
     screen.fill(WHITE)
     r = 9
-    img = np.ones((paint_board[0], paint_board[1]))
+    img = np.zeros((paint_board[0], paint_board[1]))
 
 init()
 running = True
@@ -33,14 +33,14 @@ while running:
     mouse_pressed = pygame.mouse.get_pressed()
     if mouse_pressed[0]:
         x, y = int(mouse_pos[0] // pixel_w), int(mouse_pos[1] // pixel_h)
-        img[x][y] = 0.0
+        img[x][y] = 255.0
         paint = pygame.Rect((x * pixel_w, y * pixel_h), (pixel_w, pixel_h))
         pygame.draw.rect(screen, BLACK, paint)
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_d:
                 screen.fill(WHITE)
-                img = np.ones((paint_board[0], paint_board[1]))
+                img = np.zeros((paint_board[0], paint_board[1]))
             if event.key == pygame.K_s:
                 img_saved = cv2.GaussianBlur(img, (3, 3), 0)
                 np.save("img", img_saved)
