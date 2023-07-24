@@ -1,4 +1,5 @@
 /output
+/test.py
 mnist.h5
 mnist.keras
 img.npy
