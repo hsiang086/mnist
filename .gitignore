@@ -1,3 +1,6 @@
+/output
+/test.py
+.DS_Store
 mnist.h5
 mnist.keras
 img.npy
