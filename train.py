@@ -16,3 +16,4 @@ test_images = test_images.reshape((10000, 28*28))
 train_images = train_images.astype("float32") / 255
 test_images = test_images.astype("float32") / 255
 model.fit(train_images, train_lab, epochs=5, batch_size=128)
+model.save("mnist.keras")
